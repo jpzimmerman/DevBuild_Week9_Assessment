@@ -1,0 +1,21 @@
+﻿body {
+    background-color:lightsteelblue;
+}
+
+.available-party-dates-hidden {
+    visibility:hidden;
+}
+
+.available-pary-dates-shown {
+    visibility:visible;
+}
+
+.user-entry {
+    margin: 10px;
+    transition: transform .2s;
+}
+
+    .user-entry:hover {
+        transform:scale(1.1);
+
+    }

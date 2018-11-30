@@ -1,0 +1,33 @@
+﻿@model DevBuild.Assessment6_WebForm.Models.UserData
+
+@Styles.Render("~/Content/misc.css")
+
+@{
+    ViewBag.Title = "Confirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Confirmation</h2>
+@{ if ((bool)TempData["IsAttending"])
+    {
+        <h3>We'll be glad to see you, @TempData["FirstName"]!</h3>
+        <br />
+        <h4>
+            Here is your reservation:
+            <br />
+            Name: @TempData["FirstName"] @TempData["LastName"]
+            <br />
+            Party Date: @TempData["PartyDate"]
+            <br />
+            Bringing a Guest: @((bool)TempData["HasAPlusOne"] ? "Yes" : "No")
+            <br />
+            Bringing a Dish:<br />
+        </h4>
+    }
+    else
+    {
+        <h4>We're sorry to hear you couldn't make it this year. We hope to see you next year!</h4>
+    }
+}
+
