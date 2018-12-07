@@ -1,0 +1,23 @@
+﻿@model DevBuild.Assessment6_WebForm.Models.Dish
+
+@{
+    ViewBag.Title = "Confirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Confirmation</h2>
+@{ 
+        <h3>Thank you for providing a dish, @TempData["PersonName"]!</h3>
+        <br />
+        <h4>
+            Here is what you added:
+            <br />
+            Dish: @TempData["DishName"]
+            <br />
+            Dish Description: @TempData["DishDescription"]
+            <br />
+            Options: @TempData["Options"]
+            <br />
+        </h4>
+    }
+

@@ -1,0 +1,59 @@
+﻿@model DevBuild.Assessment6_WebForm.Models.Dish
+@{
+    ViewBag.Title = "EditDish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Dish</h2>
+
+@{
+    ViewBag.Title = "Bringing a Dish";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<SelectListItem> DishCategories = new List<SelectListItem>() {
+    new SelectListItem() { Text="Gluten-Free" },
+    new SelectListItem() { Text="Vegetarian" },
+    new SelectListItem() { Text="Vegan" },
+    new SelectListItem() { Text="Peanut-free" },
+    new SelectListItem() { Text="Civilized, aka no f***ing cheese" }
+};
+}
+
+@Scripts.Render("~/Scripts/rsvp-utilities.js");
+@Styles.Render("~/Content/misc.css")
+
+@using (Html.BeginForm("Submit", "Dish", FormMethod.Post))
+{
+    <fieldset class="">
+        @Html.LabelFor(m => m.PersonName, "Name ")
+        @Html.TextBoxFor(m => m.PersonName, new { required = "required", @class = "user-entry user-entry-required" })
+        <span id="NameErrorFeedback"></span>
+    </fieldset>
+
+    <fieldset class="">
+        @Html.LabelFor(m => m.PhoneNumber, "Phone Number ")
+        @Html.TextBoxFor(m => m.PhoneNumber, new { required = "required", @class = "user-entry user-entry-required" })
+        <span id="PhoneNumberErrorFeedback"></span>
+    </fieldset>
+
+    <fieldset class="form-field">
+        @Html.LabelFor(m => m.DishName, "Name of your Dish: ")
+        @Html.TextBoxFor(m => m.DishName, new { @class = "user-entry" })
+    </fieldset>
+    <br />
+    <fieldset class="form-field">
+        @Html.LabelFor(m => m.DishDescription, "Description: ", new { style = "vertical-align:top" })
+        @Html.TextAreaFor(m => m.DishDescription)
+    </fieldset>
+    <fieldset class="form-field">
+        @Html.LabelFor(m => m.Option, "Dish Categories (select all that apply): ", new { style = "vertical-align:top" })
+        @Html.ListBoxFor(m => m.Option, DishCategories)
+    </fieldset>
+
+    <br />
+    <br />
+    <br />
+    <button type="Submit" value="Submit(this)" onclick="">Delete</button>
+
+}
+

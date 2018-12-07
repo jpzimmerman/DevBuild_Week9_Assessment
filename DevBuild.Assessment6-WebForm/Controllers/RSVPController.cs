@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,16 +16,31 @@ namespace DevBuild.Assessment6_WebForm.Controllers
             return View();
         }
 
-        public ActionResult Submit(UserData userData) {
-            if (userData.IsAttending)
+        public ActionResult Submit(Guest guestData) {
+            if (ModelState.IsValid)
             {
-                TempData.Add("FirstName", userData.FirstName);
-                TempData.Add("LastName", userData.LastName);
-                TempData.Add("PartyDate", userData.PartyDates[userData.SelectedPartyDate]);
-                TempData.Add("HasAPlusOne", userData.HasAPlusOne);
+                if (guestData.IsAttending)
+                {
+                    TempData.Add("FirstName", guestData.FirstName);
+                    TempData.Add("LastName", guestData.LastName);
+                    TempData.Add("PartyDate", guestData.AttendanceDate);
+                    TempData.Add("HasAPlusOne", guestData.HasAPlusOne);
+
+                    using (PartyDBEntities1 context = new PartyDBEntities1())
+                    {
+                        context.Guests.Add(guestData);
+                        context.Entry(guestData).State = EntityState.Added;
+                        context.SaveChanges();
+
+                    }
+                }
+                TempData.Add("IsAttending", guestData.IsAttending);
+                return RedirectToAction("Confirmation");
             }
-            TempData.Add("IsAttending", userData.IsAttending);
-            return RedirectToAction("Confirmation");
+            else
+            {
+                return View("Index");
+            }
         }
 
         public ActionResult Confirmation()

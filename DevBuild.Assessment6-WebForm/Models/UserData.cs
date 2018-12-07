@@ -8,6 +8,7 @@ namespace DevBuild.Assessment6_WebForm.Models
 {
     public class UserData
     {
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         //[EmailAddress, Required(AllowEmptyStrings = false, ErrorMessage = "Please enter an email address: ")]

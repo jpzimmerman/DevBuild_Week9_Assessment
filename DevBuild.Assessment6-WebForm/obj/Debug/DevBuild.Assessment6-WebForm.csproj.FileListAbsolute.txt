@@ -48,6 +48,8 @@ C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessmen
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\roslyn\VBCSCompiler.exe
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Antlr3.Runtime.dll
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\EntityFramework.dll
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\EntityFramework.SqlServer.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Microsoft.Web.Infrastructure.dll
@@ -61,6 +63,8 @@ C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessmen
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\System.Web.WebPages.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\System.Web.WebPages.Razor.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\WebGrease.dll
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\EntityFramework.xml
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\EntityFramework.SqlServer.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\System.Web.Helpers.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\System.Web.Mvc.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\System.Web.Optimization.xml
@@ -77,3 +81,4 @@ C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessmen
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.csproj.CopyComplete
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.pdb
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.csprojAssemblyReference.cache

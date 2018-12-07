@@ -16,6 +16,7 @@ C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessmen
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\System.Web.WebPages.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\EntityFramework.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\DevBuild.Assessment6-WebForm.pdb
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\DevBuild.Assessment6-WebForm.dll.config
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
@@ -28,6 +29,7 @@ C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessmen
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\bin\Debug\EntityFramework.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\obj\Debug\DevBuild.Assessment6-WebForm.Tests.csprojAssemblyReference.cache
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\obj\Debug\DevBuild.Assessment6-WebForm.Tests.csproj.CoreCompileInputs.cache
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm.Tests\obj\Debug\DevBuild.Assessment6-WebForm.Tests.csproj.CopyComplete

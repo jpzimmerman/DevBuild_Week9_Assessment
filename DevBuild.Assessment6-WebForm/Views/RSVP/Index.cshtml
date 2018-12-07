@@ -1,4 +1,4 @@
-﻿@model DevBuild.Assessment6_WebForm.Models.UserData
+﻿@model DevBuild.Assessment6_WebForm.Models.Guest
 
 @Scripts.Render("~/Scripts/rsvp-utilities.js");
 @Styles.Render("~/Content/misc.css")
@@ -9,6 +9,10 @@
 
     ViewBag.Title = "RSVP";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    if (ViewData.ModelState.Count > 0)
+    {
+        @Html.ValidationSummary(false, "Please fix the following errors: ", new { @class = "alert alert-danger" })
+    }
 }
 
 
@@ -18,7 +22,7 @@
     <h2>RSVP</h2>
     <fieldset class="">
         @Html.LabelFor(m => m.FirstName, "First Name ")
-        @Html.TextBoxFor(m => m.FirstName, new { required = "required", @class = "user-entry user-entry-required" })
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "user-entry user-entry-required" })
         <span id="FirstNameErrorFeedback"></span>
     </fieldset>
 
@@ -37,44 +41,46 @@
     <fieldset class="form-field">
         @Html.LabelFor(m => m.IsAttending, "Will you be attending?")
         <br />
-        @Html.RadioButtonFor(m => m.IsAttending, true, new { required = "required", value="user-yes", onchange = "AckAttendance()" }) Yes
-        @Html.RadioButtonFor(m => m.IsAttending, false, new { required = "required", value="user-no", onchange = "AckAttendance()" }) No
+        @Html.RadioButtonFor(m => m.IsAttending, true, new { required = "required", value = "user-yes", onchange = "AckAttendance()" }) Yes
+        @Html.RadioButtonFor(m => m.IsAttending, false, new { required = "required", value = "user-no", onchange = "AckAttendance()" }) No
         <br />
         <span id="AttendanceMessage"></span>
         <span id="available-party-dates" class="available-party-dates-hidden">
-            @Html.LabelFor(m => m.SelectedPartyDate, "Which night's party will you plan on attending?")
+            @Html.LabelFor(m => m.AttendanceDate, "Which night's party will you plan on attending?")
             <br />
-            @Html.RadioButtonFor(m => m.SelectedPartyDate, 0) 12/14/2018
-            @Html.RadioButtonFor(m => m.SelectedPartyDate, 1) 12/15/2018
+            @Html.RadioButtonFor(m => m.AttendanceDate, "12/14/2018") 12/14/2018
+            @Html.RadioButtonFor(m => m.AttendanceDate, "12/15/2018") 12/15/2018
         </span>
         <br />
     </fieldset>
 
-
     <br />
     <fieldset class="form-field">
-        @Html.LabelFor(m => m.HasAPlusOne, "Will you be bringing a plus-one guest?")
+        @Html.LabelFor(m => m.Guest1, "Guest: ")
         <br />
-        @Html.RadioButtonFor(m => m.HasAPlusOne, true) Yes
-        @Html.RadioButtonFor(m => m.HasAPlusOne, false) No
+        <!--Html.RadioButtonFor(m => m.Guest1, true) Yes
+        Html.RadioButtonFor(m => m.Guest1, false) No -->
+        @Html.TextBoxFor(m => m.Guest1)
     </fieldset>
     <br />
-    <fieldset>
+    <!-- <fieldset>
         <p>This party will serve alcoholic beverages. <br />For our bartender's records, please rate the likelihood of you getting drunk and tackling the Christmas tree Kiefer Sutherland-style, with 1 = Least Likely and 10 = Most Likely:</p>
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 1)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 2)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 3)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 4)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 5)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 6)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 7)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 8)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 9)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 10)
+        @{
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 1)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 2)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 3)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 4)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 5)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 6)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 7)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 8)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 9)
+        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 10)
+            }
         <br />
         <span>1-------------------------------10</span>
     </fieldset>
-    <br />
+    <br /> -->
     <br />
     <button type="Submit" value="Submit(this)" onclick="">Submit</button>
 

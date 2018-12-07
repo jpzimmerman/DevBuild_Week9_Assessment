@@ -1,87 +1,52 @@
-﻿@model DevBuild.Assessment6_WebForm.Models.DishInfo
+﻿@model DevBuild.Assessment6_WebForm.Models.Dish
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Bringing a Dish";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<SelectListItem> DishCategories = new List<SelectListItem>() {
+            new SelectListItem() { Text="Gluten-Free" },
+            new SelectListItem() { Text="Vegetarian" },
+            new SelectListItem() { Text="Vegan" },
+            new SelectListItem() { Text="Peanut-free" },
+            new SelectListItem() { Text="Civilized, aka no f***ing cheese" }
+        };
 }
 
-<h2>Index</h2>
-
-@model DevBuild.Assessment6_WebForm.Models.UserData
+<h2>@ViewBag.Title</h2>
 
 @Scripts.Render("~/Scripts/rsvp-utilities.js");
 @Styles.Render("~/Content/misc.css")
 
-@{
-    //
-
-
-    ViewBag.Title = "RSVP";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-
-@using (Html.BeginForm("Submit", "RSVP", FormMethod.Post))
+@using (Html.BeginForm("Submit", "Dish", FormMethod.Post))
 {
-    <h2>RSVP</h2>
     <fieldset class="">
-        @Html.LabelFor(m => m.FirstName, "First Name ")
-        @Html.TextBoxFor(m => m.FirstName, new { required = "required", @class = "user-entry user-entry-required" })
-        <span id="FirstNameErrorFeedback"></span>
+        @Html.LabelFor(m => m.PersonName, "Name ")
+        @Html.TextBoxFor(m => m.PersonName, new { required = "required", @class = "user-entry user-entry-required" })
+        <span id="NameErrorFeedback"></span>
     </fieldset>
 
     <fieldset class="">
-        @Html.LabelFor(m => m.LastName, "First Name ")
-        @Html.TextBoxFor(m => m.LastName, new { required = "required", @class = "user-entry user-entry-required" })
-        <span id="LastNameErrorFeedback"></span>
+        @Html.LabelFor(m => m.PhoneNumber, "Phone Number ")
+        @Html.TextBoxFor(m => m.PhoneNumber, new { required = "required", @class = "user-entry user-entry-required" })
+        <span id="PhoneNumberErrorFeedback"></span>
     </fieldset>
 
     <fieldset class="form-field">
-        @Html.LabelFor(m => m.EmailAddress, "Email Address ")
-        @Html.TextBoxFor(m => m.EmailAddress, new { type = "email", required = "required", @class = "user-entry user-entry-required" })
-        <span id="EmailAddressErrorFeedback"></span>
+        @Html.LabelFor(m => m.DishName, "Name of your Dish: ")
+        @Html.TextBoxFor(m => m.DishName, new { @class = "user-entry" })
     </fieldset>
     <br />
     <fieldset class="form-field">
-        @Html.LabelFor(m => m.IsAttending, "Will you be attending?")
-        <br />
-        @Html.RadioButtonFor(m => m.IsAttending, true, new { required = "required", value = "user-yes", onchange = "AckAttendance()" }) Yes
-        @Html.RadioButtonFor(m => m.IsAttending, false, new { required = "required", value = "user-no", onchange = "AckAttendance()" }) No
-        <br />
-        <span id="AttendanceMessage"></span>
-        <span id="available-party-dates" class="available-party-dates-hidden">
-            @Html.LabelFor(m => m.SelectedPartyDate, "Which night's party will you plan on attending?")
-            <br />
-            @Html.RadioButtonFor(m => m.SelectedPartyDate, 0) 12/14/2018
-            @Html.RadioButtonFor(m => m.SelectedPartyDate, 1) 12/15/2018
-        </span>
-        <br />
+        @Html.LabelFor(m => m.DishDescription, "Description: ", new { style = "vertical-align:top" })
+        @Html.TextAreaFor(m => m.DishDescription)
+    </fieldset>
+    <fieldset class="form-field">
+        @Html.LabelFor(m => m.Option, "Dish Categories (select all that apply): ", new { style = "vertical-align:top" })
+        @Html.ListBoxFor(m => m.Option, DishCategories)
     </fieldset>
 
 
     <br />
-    <fieldset class="form-field">
-        @Html.LabelFor(m => m.HasAPlusOne, "Will you be bringing a plus-one guest?")
-        <br />
-        @Html.RadioButtonFor(m => m.HasAPlusOne, true) Yes
-        @Html.RadioButtonFor(m => m.HasAPlusOne, false) No
-    </fieldset>
-    <br />
-    <fieldset>
-        <p>This party will serve alcoholic beverages. <br />For our bartender's records, please rate the likelihood of you getting drunk and tackling the Christmas tree Kiefer Sutherland-style, with 1 = Least Likely and 10 = Most Likely:</p>
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 1)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 2)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 3)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 4)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 5)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 6)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 7)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 8)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 9)
-        @Html.RadioButtonFor(m => m.DrunkenIdiotEval, 10)
-        <br />
-        <span>1-------------------------------10</span>
-    </fieldset>
     <br />
     <br />
     <button type="Submit" value="Submit(this)" onclick="">Submit</button>
