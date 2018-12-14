@@ -8,6 +8,7 @@ namespace DevBuild.Assessment6_WebForm
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new AuthorizeAttribute());
         }
     }
 }

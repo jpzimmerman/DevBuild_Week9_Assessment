@@ -18,7 +18,7 @@
             <br />
             Name: @TempData["FirstName"] @TempData["LastName"]
             <br />
-            Party Date: @TempData["PartyDate"]
+            Party Date: @Html.Label(String.Format("{0:MM/dd}", TempData["PartyDate"]))
             <br />
             Bringing a Guest: @((bool)TempData["HasAPlusOne"] ? "Yes" : "No")
             <br />

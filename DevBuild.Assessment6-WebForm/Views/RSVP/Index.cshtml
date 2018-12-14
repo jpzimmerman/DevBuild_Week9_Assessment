@@ -27,7 +27,7 @@
     </fieldset>
 
     <fieldset class="">
-        @Html.LabelFor(m => m.LastName, "First Name ")
+        @Html.LabelFor(m => m.LastName, "Last Name ")
         @Html.TextBoxFor(m => m.LastName, new { required = "required", @class = "user-entry user-entry-required" })
         <span id="LastNameErrorFeedback"></span>
     </fieldset>
@@ -58,8 +58,8 @@
     <fieldset class="form-field">
         @Html.LabelFor(m => m.Guest1, "Guest: ")
         <br />
-        <!--Html.RadioButtonFor(m => m.Guest1, true) Yes
-        Html.RadioButtonFor(m => m.Guest1, false) No -->
+        @Html.RadioButtonFor(m => m.HasAPlusOne, true) Yes
+        @Html.RadioButtonFor(m => m.HasAPlusOne, false) No
         @Html.TextBoxFor(m => m.Guest1)
     </fieldset>
     <br />

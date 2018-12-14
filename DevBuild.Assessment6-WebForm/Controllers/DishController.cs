@@ -10,7 +10,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
 {
     public class DishController : Controller
     {
-        private List<Dish> AllDishes { get; set; }
+        private List<Dish> AllDishes { get; set; } = new List<Dish>();
 
         // GET: Dish
         public ActionResult Index()
@@ -26,6 +26,13 @@ namespace DevBuild.Assessment6_WebForm.Controllers
             }
             return View(AllDishes);
         }
+
+        public ActionResult MyDishes()
+        {
+            return View(AllDishes);
+        }
+
+        
 
         [HttpPost]
         public ActionResult Submit(Dish dishData)
@@ -73,6 +80,16 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         {
             using (PartyDBEntities1 context = new PartyDBEntities1())
             {
+                Dish editedDish = new Dish()
+                {
+                    //PersonName = dishToEdit.PersonName,
+                    //DishDescription = dishToEdit.DishDescription,
+                    DishID = dishToEdit.DishID//,
+                    //DishName = dishToEdit.DishName,
+                    //PhoneNumber = dishToEdit.PhoneNumber,
+                    //Option = dishToEdit.Option
+                };
+
                 context.Entry(dishToEdit).State = EntityState.Modified;
                 context.SaveChanges();
                 return RedirectToAction("Index");
@@ -102,6 +119,5 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         {
             return View();
         }
-
     }
 }

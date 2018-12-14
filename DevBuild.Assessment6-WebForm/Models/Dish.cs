@@ -6,7 +6,6 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.ComponentModel.DataAnnotations;
 
 namespace DevBuild.Assessment6_WebForm.Models
 {
@@ -17,10 +16,10 @@ namespace DevBuild.Assessment6_WebForm.Models
     {
         public int DishID { get; set; }
         public string PersonName { get; set; }
-        [DisplayFormat(DataFormatString = "{0:(###)###-####}")]
         public string PhoneNumber { get; set; }
         public string DishName { get; set; }
         public string DishDescription { get; set; }
         public string Option { get; set; }
+        public Nullable<int> GuestID { get; set; }
     }
 }

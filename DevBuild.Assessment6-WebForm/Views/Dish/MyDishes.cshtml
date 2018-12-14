@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DevBuild.Assessment6_WebForm.Models.Dish>
+
+@{
+    ViewBag.Title = "MyDishes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MyDishes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DishName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DishDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuestID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DishName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DishDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuestID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DishID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DishID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DishID })
+        </td>
+    </tr>
+}
+
+</table>

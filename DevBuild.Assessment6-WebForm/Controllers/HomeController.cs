@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace DevBuild.Assessment6_WebForm.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

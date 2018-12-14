@@ -19,7 +19,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         public ActionResult Submit(Guest guestData) {
             if (ModelState.IsValid)
             {
-                if (guestData.IsAttending)
+                if ((bool)guestData.IsAttending)
                 {
                     TempData.Add("FirstName", guestData.FirstName);
                     TempData.Add("LastName", guestData.LastName);

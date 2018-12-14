@@ -16,14 +16,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Holiday Party", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("RSVP", "Index", "RSVP")</li>
-                    <li>@Html.ActionLink("Bring a Dish", "Index", "Dish")</li>
-                    <li>@Html.ActionLink("All Dishes", "ShowDishes", "Dish")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("RSVP", "Index", "RSVP")</li>
+                        <li>@Html.ActionLink("Bring a Dish", "Index", "Dish")</li>
+                        //<li>@Html.ActionLink("All Dishes", "ShowDishes", "Dish")</li>
+                        <li>@Html.ActionLink("My Dishes", "MyDishes", "Dish")</li>
+                        <li>@Html.Label(User.Identity.Name, new { @class = "authenticated-user-info" })</li>
+                        <li>@Html.ActionLink("Log Out", "Logout", "Identity")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Identity")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Identity")</li>
+                    }
+
                 </ul>
             </div>
         </div>
