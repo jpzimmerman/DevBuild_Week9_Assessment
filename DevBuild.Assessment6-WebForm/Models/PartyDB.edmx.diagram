@@ -4,19 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1dc2f882b198414babc3165df6df3ff3" Name="Diagram1">
-        <EntityTypeShape EntityType="PartyDBModel.C__MigrationHistory1" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="PartyDBModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
-        <EntityTypeShape EntityType="PartyDBModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.625" />
-        <EntityTypeShape EntityType="PartyDBModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="PartyDBModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
-        <EntityTypeShape EntityType="PartyDBModel.Dish1" Width="1.5" PointX="2.75" PointY="6.75" />
-        <EntityTypeShape EntityType="PartyDBModel.Guest1" Width="1.5" PointX="4.75" PointY="6.75" />
-        <AssociationConnector Association="PartyDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
-        <AssociationConnector Association="PartyDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
-        <AssociationConnector Association="PartyDBModel.AspNetUserRoles" />
-        <EntityTypeShape EntityType="PartyDBModel.Dish" Width="1.5" PointX="7.125" PointY="3.75" />
-        <EntityTypeShape EntityType="PartyDBModel.Guest" Width="1.5" PointX="10.375" PointY="7.25" />
+      <Diagram DiagramId="dbcbb738618f401899315aefbb282bb5" Name="Diagram1">
+        <EntityTypeShape EntityType="PartyDBModel.Dish" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyDBModel.GameOfThronesCharacter" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyDBModel.Guest" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PartyDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="PartyDBModel.FK_Guest_GameOfThronesCharacters" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

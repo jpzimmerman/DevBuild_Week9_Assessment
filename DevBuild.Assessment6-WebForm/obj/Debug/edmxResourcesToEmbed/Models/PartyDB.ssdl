@@ -1,45 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="PartyDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="PartyDBModelStoreContainer">
-    <EntitySet Name="C__MigrationHistory" EntityType="PartyDBModel.Store.C__MigrationHistory" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Dishes" EntityType="PartyDBModel.Store.Dishes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="PartyDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GameOfThronesCharacters" EntityType="PartyDBModel.Store.GameOfThronesCharacters" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Guests" EntityType="PartyDBModel.Store.Guests" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="C__MigrationHistory1" EntityType="PartyDBModel.Store.C__MigrationHistory1" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetRoles" EntityType="PartyDBModel.Store.AspNetRoles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUserClaims" EntityType="PartyDBModel.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUserLogins" EntityType="PartyDBModel.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUsers" EntityType="PartyDBModel.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Dish1" EntityType="PartyDBModel.Store.Dish1" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Guest1" EntityType="PartyDBModel.Store.Guest1" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AspNetUserRoles" EntityType="PartyDBModel.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="PartyDBModel.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-      <End Role="AspNetUser" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="PartyDBModel.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-      <End Role="AspNetUser" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AspNetUserRoles_AspNetRole" Association="PartyDBModel.Store.FK_AspNetUserRoles_AspNetRole">
-      <End Role="AspNetRole" EntitySet="AspNetRoles" />
-      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AspNetUserRoles_AspNetUser" Association="PartyDBModel.Store.FK_AspNetUserRoles_AspNetUser">
-      <End Role="AspNetUser" EntitySet="AspNetUsers" />
-      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    <EntitySet Name="sysdiagrams" EntityType="PartyDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Guest_GameOfThronesCharacters" Association="PartyDBModel.Store.FK_Guest_GameOfThronesCharacters">
+      <End Role="GameOfThronesCharacters" EntitySet="GameOfThronesCharacters" />
+      <End Role="Guest" EntitySet="Guests" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="C__MigrationHistory">
-    <Key>
-      <PropertyRef Name="MigrationId" />
-      <PropertyRef Name="ContextKey" />
-    </Key>
-    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="150" />
-    <Property Name="ContextKey" Type="nvarchar" Nullable="false" MaxLength="300" />
-    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
-    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
-  </EntityType>
   <EntityType Name="Dishes">
     <Key>
       <PropertyRef Name="DishID" />
@@ -52,15 +22,22 @@
     <Property Name="Option" Type="nchar" Nullable="true" MaxLength="20" />
     <Property Name="GuestID" Type="int" Nullable="true" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
+  <EntityType Name="GameOfThronesCharacters">
     <Key>
-      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="CharacterID" />
     </Key>
-    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" Nullable="true" />
-    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+    <Property Name="CharacterID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="Aliases" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Titles" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mother" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Father" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Culture" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="House" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Allegiance" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Book" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Guests">
     <Key>
@@ -76,144 +53,27 @@
     <Property Name="Guest1" Type="nvarchar" Nullable="true" MaxLength="50" />
     <Property Name="BringingADish" Type="bit" Nullable="true" />
     <Property Name="DishID" Type="int" Nullable="true" />
+    <Property Name="CharacterID" Type="int" Nullable="true" />
   </EntityType>
-  <EntityType Name="C__MigrationHistory1">
+  <EntityType Name="sysdiagrams">
     <Key>
-      <PropertyRef Name="MigrationId" />
-      <PropertyRef Name="ContextKey" />
+      <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="150" />
-    <Property Name="ContextKey" Type="nvarchar" Nullable="false" MaxLength="300" />
-    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
-    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
   </EntityType>
-  <EntityType Name="AspNetRoles">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="AspNetUserClaims">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="ClaimType" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="ClaimValue" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="AspNetUserLogins">
-    <Key>
-      <PropertyRef Name="LoginProvider" />
-      <PropertyRef Name="ProviderKey" />
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
-  </EntityType>
-  <EntityType Name="AspNetUsers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
-    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
-    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
-    <Property Name="LockoutEndDateUtc" Type="datetime" Nullable="true" />
-    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="Dish1">
-    <Key>
-      <PropertyRef Name="DishID" />
-    </Key>
-    <Property Name="DishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PersonName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="PhoneNumber" Type="nvarchar" Nullable="true" MaxLength="24" />
-    <Property Name="DishName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="DishDescription" Type="nvarchar" Nullable="true" MaxLength="100" />
-    <Property Name="Option" Type="nchar" Nullable="true" MaxLength="20" />
-    <Property Name="GuestID" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Guest1">
-    <Key>
-      <PropertyRef Name="GuestID" />
-    </Key>
-    <Property Name="GuestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="LastName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="AttendanceDate" Type="datetime" Nullable="true" />
-    <Property Name="EmailAddress" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="IsAttending" Type="bit" Nullable="true" />
-    <Property Name="HasAPlusOne" Type="bit" Nullable="true" />
-    <Property Name="Guest11" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="BringingADish" Type="bit" Nullable="true" />
-    <Property Name="DishID" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="AspNetUserRoles">
-    <Key>
-      <PropertyRef Name="AspNetRoles_Id" />
-      <PropertyRef Name="AspNetUsers_Id" />
-    </Key>
-    <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
-  </EntityType>
-  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
-    <End Role="AspNetUser" Type="PartyDBModel.Store.AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="AspNetUserClaim" Type="PartyDBModel.Store.AspNetUserClaims" Multiplicity="*" />
+  <Association Name="FK_Guest_GameOfThronesCharacters">
+    <End Role="GameOfThronesCharacters" Type="PartyDBModel.Store.GameOfThronesCharacters" Multiplicity="0..1" />
+    <End Role="Guest" Type="PartyDBModel.Store.Guests" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="AspNetUser">
-        <PropertyRef Name="Id" />
+      <Principal Role="GameOfThronesCharacters">
+        <PropertyRef Name="CharacterID" />
       </Principal>
-      <Dependent Role="AspNetUserClaim">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
-    <End Role="AspNetUser" Type="PartyDBModel.Store.AspNetUsers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="AspNetUserLogin" Type="PartyDBModel.Store.AspNetUserLogins" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUser">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserLogin">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AspNetUserRoles_AspNetRole">
-    <End Role="AspNetRole" Type="PartyDBModel.Store.AspNetRoles" Multiplicity="1" />
-    <End Role="AspNetUserRoles" Type="PartyDBModel.Store.AspNetUserRoles" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetRole">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserRoles">
-        <PropertyRef Name="AspNetRoles_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AspNetUserRoles_AspNetUser">
-    <End Role="AspNetUserRoles" Type="PartyDBModel.Store.AspNetUserRoles" Multiplicity="*" />
-    <End Role="AspNetUser" Type="PartyDBModel.Store.AspNetUsers" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="AspNetUser">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AspNetUserRoles">
-        <PropertyRef Name="AspNetUsers_Id" />
+      <Dependent Role="Guest">
+        <PropertyRef Name="CharacterID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -37,6 +37,14 @@
         @Html.TextBoxFor(m => m.EmailAddress, new { type = "email", required = "required", @class = "user-entry user-entry-required" })
         <span id="EmailAddressErrorFeedback"></span>
     </fieldset>
+
+    <fieldset>
+        @Html.Label("Favorite Game of Thrones Character: ")
+        @Html.DropDownListFor(m => m.CharacterName, DevBuild.Assessment6_WebForm.Data.GoTCharactersRepository.GoTCharacters_SelectList)
+        @Html.ActionLink("Details", "Index", "Home", new { target = "_blank" })
+
+    </fieldset>
+    
     <br />
     <fieldset class="form-field">
         @Html.LabelFor(m => m.IsAttending, "Will you be attending?")
@@ -63,24 +71,6 @@
         @Html.TextBoxFor(m => m.Guest1)
     </fieldset>
     <br />
-    <!-- <fieldset>
-        <p>This party will serve alcoholic beverages. <br />For our bartender's records, please rate the likelihood of you getting drunk and tackling the Christmas tree Kiefer Sutherland-style, with 1 = Least Likely and 10 = Most Likely:</p>
-        @{
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 1)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 2)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 3)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 4)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 5)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 6)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 7)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 8)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 9)
-        //Html.RadioButtonFor(m => m.DrunkenIdiotEval, 10)
-            }
-        <br />
-        <span>1-------------------------------10</span>
-    </fieldset>
-    <br /> -->
     <br />
     <button type="Submit" value="Submit(this)" onclick="">Submit</button>
 

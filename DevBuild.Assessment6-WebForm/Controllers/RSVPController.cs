@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DevBuild.Assessment6_WebForm.Models;
+using DevBuild.Assessment6_WebForm.Data;
 
 namespace DevBuild.Assessment6_WebForm.Controllers
 {
@@ -26,15 +27,22 @@ namespace DevBuild.Assessment6_WebForm.Controllers
                     TempData.Add("PartyDate", guestData.AttendanceDate);
                     TempData.Add("HasAPlusOne", guestData.HasAPlusOne);
 
-                    using (PartyDBEntities1 context = new PartyDBEntities1())
+                    GoTCharacter favoriteCharacter = GoTCharactersRepository.GetCharacterByName(guestData.CharacterName);
+                    guestData.GameOfThronesCharacter = new GameOfThronesCharacter();
+                    guestData.GameOfThronesCharacter.Name = favoriteCharacter.name;
+                    guestData.GameOfThronesCharacter.Url = favoriteCharacter.url;
+                    guestData.GameOfThronesCharacter.Titles = favoriteCharacter.titles[0];
+                    guestData.GameOfThronesCharacter.Aliases = favoriteCharacter.aliases[0];
+
+                    using (PartyDBEntities2 context = new PartyDBEntities2())
                     {
                         context.Guests.Add(guestData);
                         context.Entry(guestData).State = EntityState.Added;
                         context.SaveChanges();
-
                     }
                 }
                 TempData.Add("IsAttending", guestData.IsAttending);
+                TempData.Add("FavoriteGoTCharacter", guestData.GameOfThronesCharacter.Name);
                 return RedirectToAction("Confirmation");
             }
             else

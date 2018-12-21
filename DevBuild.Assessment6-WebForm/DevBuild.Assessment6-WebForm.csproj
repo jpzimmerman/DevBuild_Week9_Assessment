@@ -162,9 +162,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DishController.cs" />
+    <Compile Include="Controllers\GOTCharactersController.cs" />
+    <Compile Include="Controllers\GuestListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdentityController.cs" />
     <Compile Include="Controllers\RSVPController.cs" />
+    <Compile Include="Data\GoTCharactersRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,20 +186,15 @@
     <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>Joshua-PartyDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\C__MigrationHistory1.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Dish.cs">
       <DependentUpon>PartyDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Dish1.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DishInfo.cs" />
-    <Compile Include="Models\Guest.cs">
+    <Compile Include="Models\GameOfThronesCharacter.cs">
       <DependentUpon>PartyDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Guest1.cs">
+    <Compile Include="Models\GoTCharacter.cs" />
+    <Compile Include="Models\Guest.cs">
       <DependentUpon>PartyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Joshua-PartyDB.Context.cs">
@@ -231,25 +229,7 @@
       <DependentUpon>PartyDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\RegistrationModel.cs" />
-    <Compile Include="Models\sp_helpdiagramdefinition1_Result.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition2_Result.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition3_Result.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams1_Result.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams2_Result.cs">
-      <DependentUpon>PartyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams3_Result.cs">
       <DependentUpon>PartyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagrams_Result.cs">
@@ -363,13 +343,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\PartyDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PartyDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PartyDB.edmx.diagram">
-      <DependentUpon>PartyDB.edmx</DependentUpon>
-    </Content>
     <Content Include="bin\DevBuild.Assessment6-WebForm.dll.config" />
     <Content Include="bin\roslyn\csc.exe.config" />
     <Content Include="bin\roslyn\csc.rsp" />
@@ -387,6 +360,13 @@
     </EntityDeploy>
     <Content Include="Models\Joshua-PartyDB.edmx.diagram">
       <DependentUpon>Joshua-PartyDB.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PartyDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PartyDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PartyDB.edmx.diagram">
+      <DependentUpon>PartyDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -425,9 +405,11 @@
     <Content Include="Views\Identity\Login.cshtml" />
     <Content Include="Views\Identity\Register.cshtml" />
     <Content Include="Views\Dish\MyDishes.cshtml" />
+    <Content Include="Views\GuestList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\GOTCharacters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

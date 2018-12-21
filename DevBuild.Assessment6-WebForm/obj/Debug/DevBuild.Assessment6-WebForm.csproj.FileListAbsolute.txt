@@ -64,8 +64,8 @@ C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessmen
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Microsoft.Owin.Security.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Microsoft.Owin.Security.Cookies.xml
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.csprojAssemblyReference.cache
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.csproj.CoreCompileInputs.cache
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.csproj.CopyComplete
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.dll
 C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.pdb
-C:\Users\JZimmerman\source\repos\DevBuild.Assessment6-WebForm\DevBuild.Assessment6-WebForm\obj\Debug\DevBuild.Assessment6-WebForm.csprojAssemblyReference.cache

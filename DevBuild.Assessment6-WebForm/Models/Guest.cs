@@ -24,5 +24,9 @@ namespace DevBuild.Assessment6_WebForm.Models
         public string Guest1 { get; set; }
         public Nullable<bool> BringingADish { get; set; }
         public Nullable<int> DishID { get; set; }
+        public Nullable<int> CharacterID { get; set; }
+        public string CharacterName { get; set; }
+    
+        public virtual GameOfThronesCharacter GameOfThronesCharacter { get; set; }
     }
 }
