@@ -34,10 +34,10 @@ namespace DevBuild.Assessment6_WebForm.Controllers
                     guestData.GameOfThronesCharacter.Titles = favoriteCharacter.titles[0];
                     guestData.GameOfThronesCharacter.Aliases = favoriteCharacter.aliases[0];
 
-                    using (PartyDBEntities2 context = new PartyDBEntities2())
+                    using (PartyDBEntities3 context = new PartyDBEntities3())
                     {
                         context.Guests.Add(guestData);
-                        context.Entry(guestData).State = EntityState.Added;
+                        //context.Entry(guestData).State = EntityState.Added;
                         context.SaveChanges();
                     }
                 }

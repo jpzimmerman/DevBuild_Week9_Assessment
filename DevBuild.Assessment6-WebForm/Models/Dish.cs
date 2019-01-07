@@ -21,5 +21,7 @@ namespace DevBuild.Assessment6_WebForm.Models
         public string DishDescription { get; set; }
         public string Option { get; set; }
         public Nullable<int> GuestID { get; set; }
+    
+        public virtual Guest Guest { get; set; }
     }
 }

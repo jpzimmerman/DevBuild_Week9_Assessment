@@ -13,7 +13,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         // GET: GuestList
         public ActionResult Index()
         {
-            using (PartyDBEntities2 ORM = new PartyDBEntities2())
+            using (PartyDBEntities3 ORM = new PartyDBEntities3())
             {
                 List<Guest> masterGuestList = ORM.Guests.ToList();
                 return View(masterGuestList);

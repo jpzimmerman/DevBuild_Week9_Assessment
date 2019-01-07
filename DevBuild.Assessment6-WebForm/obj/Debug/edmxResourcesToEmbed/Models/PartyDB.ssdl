@@ -1,73 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PartyDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="PartyDBModelStoreContainer">
-    <EntitySet Name="Dishes" EntityType="PartyDBModel.Store.Dishes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GameOfThronesCharacters" EntityType="PartyDBModel.Store.GameOfThronesCharacters" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Guests" EntityType="PartyDBModel.Store.Guests" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="PartyDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_Guest_GameOfThronesCharacters" Association="PartyDBModel.Store.FK_Guest_GameOfThronesCharacters">
-      <End Role="GameOfThronesCharacters" EntitySet="GameOfThronesCharacters" />
-      <End Role="Guest" EntitySet="Guests" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Dishes">
+<Schema Namespace="PartyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dish">
     <Key>
       <PropertyRef Name="DishID" />
     </Key>
     <Property Name="DishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PersonName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="PhoneNumber" Type="nvarchar" Nullable="true" MaxLength="24" />
-    <Property Name="DishName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="DishDescription" Type="nvarchar" Nullable="true" MaxLength="100" />
-    <Property Name="Option" Type="nchar" Nullable="true" MaxLength="20" />
-    <Property Name="GuestID" Type="int" Nullable="true" />
+    <Property Name="PersonName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="24" />
+    <Property Name="DishName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DishDescription" Type="nvarchar" MaxLength="100" />
+    <Property Name="Option" Type="nchar" MaxLength="20" />
+    <Property Name="GuestID" Type="int" />
   </EntityType>
   <EntityType Name="GameOfThronesCharacters">
     <Key>
       <PropertyRef Name="CharacterID" />
     </Key>
-    <Property Name="CharacterID" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="128" />
-    <Property Name="Aliases" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Titles" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Mother" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Father" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Gender" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Culture" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="House" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Allegiance" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Book" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Url" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CharacterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" />
+    <Property Name="Aliases" Type="nvarchar(max)" />
+    <Property Name="Titles" Type="nvarchar(max)" />
+    <Property Name="Mother" Type="nvarchar" MaxLength="50" />
+    <Property Name="Father" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Culture" Type="nvarchar" MaxLength="50" />
+    <Property Name="House" Type="nvarchar" MaxLength="50" />
+    <Property Name="Allegiance" Type="nvarchar" MaxLength="50" />
+    <Property Name="Book" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="Guests">
+  <EntityType Name="Guest">
     <Key>
       <PropertyRef Name="GuestID" />
     </Key>
     <Property Name="GuestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="LastName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="AttendanceDate" Type="datetime" Nullable="true" />
-    <Property Name="EmailAddress" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="IsAttending" Type="bit" Nullable="true" />
-    <Property Name="HasAPlusOne" Type="bit" Nullable="true" />
-    <Property Name="Guest1" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="BringingADish" Type="bit" Nullable="true" />
-    <Property Name="DishID" Type="int" Nullable="true" />
-    <Property Name="CharacterID" Type="int" Nullable="true" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttendanceDate" Type="datetime" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsAttending" Type="bit" />
+    <Property Name="HasAPlusOne" Type="bit" />
+    <Property Name="Guest" Type="nvarchar" MaxLength="50" />
+    <Property Name="BringingADish" Type="bit" />
+    <Property Name="DishID" Type="int" />
+    <Property Name="CharacterID" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="principal_id" Type="int" Nullable="false" />
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" Nullable="true" />
-    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_Dish_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="0..1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="GuestID" />
+      </Principal>
+      <Dependent Role="Dish">
+        <PropertyRef Name="GuestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Guest_GameOfThronesCharacters">
-    <End Role="GameOfThronesCharacters" Type="PartyDBModel.Store.GameOfThronesCharacters" Multiplicity="0..1" />
-    <End Role="Guest" Type="PartyDBModel.Store.Guests" Multiplicity="*" />
+    <End Role="GameOfThronesCharacters" Type="Self.GameOfThronesCharacters" Multiplicity="0..1" />
+    <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="GameOfThronesCharacters">
         <PropertyRef Name="CharacterID" />
@@ -77,4 +79,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="PartyDBModelStoreContainer">
+    <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameOfThronesCharacters" EntityType="Self.GameOfThronesCharacters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Dish_Guest" Association="Self.FK_Dish_Guest">
+      <End Role="Guest" EntitySet="Guest" />
+      <End Role="Dish" EntitySet="Dish" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guest_GameOfThronesCharacters" Association="Self.FK_Guest_GameOfThronesCharacters">
+      <End Role="GameOfThronesCharacters" EntitySet="GameOfThronesCharacters" />
+      <End Role="Guest" EntitySet="Guest" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

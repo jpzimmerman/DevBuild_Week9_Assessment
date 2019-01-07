@@ -20,7 +20,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
 
         public ActionResult ShowDishes()
         {
-            using (PartyDBEntities2 context = new PartyDBEntities2())
+            using (PartyDBEntities3 context = new PartyDBEntities3())
             {
                 AllDishes = context.Dishes.ToList();
             }
@@ -43,7 +43,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
             TempData.Add("DishDescription", dishData.DishDescription);
             TempData.Add("Options", dishData.Option);
 
-            using (PartyDBEntities2 context = new PartyDBEntities2())
+            using (PartyDBEntities3 context = new PartyDBEntities3())
             {
                 context.Dishes.Add(dishData);
                 context.Entry(dishData).State = EntityState.Added;
@@ -62,7 +62,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         {
             if (id != null)
             {
-                using (PartyDBEntities2 context = new PartyDBEntities2())
+                using (PartyDBEntities3 context = new PartyDBEntities3())
                 {
                     Dish dishToEdit = context.Dishes.Find(id);
                     if (dishToEdit != null)
@@ -78,7 +78,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         [HttpPost]
         public ActionResult SaveEdits(Dish dishToEdit)
         {
-            using (PartyDBEntities2 context = new PartyDBEntities2())
+            using (PartyDBEntities3 context = new PartyDBEntities3())
             {
                 Dish editedDish = new Dish()
                 {
@@ -100,7 +100,7 @@ namespace DevBuild.Assessment6_WebForm.Controllers
         {
             if (id != null)
             {
-                using (PartyDBEntities2 context = new PartyDBEntities2())
+                using (PartyDBEntities3 context = new PartyDBEntities3())
                 {
                     Dish dishToDelete = context.Dishes.Find(id);
                     if (dishToDelete != null)
